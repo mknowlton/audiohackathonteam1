@@ -4,7 +4,7 @@
   "description": "Repo for Audio Hackathon Team 1",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
     "body-parser": "~1.14.0",
     "cookie-parser": "~1.4.0",
     "express-session": "~1.11.3",
-    "jade": "~1.11.0"
+    "jade": "~1.11.0",
+    "request": "~2.62.0",
+    "dotenv": "~1.2.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -55,8 +57,5 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }
