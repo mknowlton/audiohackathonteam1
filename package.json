@@ -1,0 +1,26 @@
+{
+  "name": "QueueCast",
+  "version": "0.0.0",
+  "description": "Repo for Audio Hackathon Team 1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mknowlton/audiohackathonteam1.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/therewasaguy/audiohackathonteam1/issues"
+  },
+  "homepage": "https://github.com/therewasaguy/audiohackathonteam1",
+  "dependencies": {
+    "express": "~4.13.3",
+    "body-parser": "~1.14.0",
+    "cookie-parser": "~1.4.0",
+    "express-session": "~1.11.3",
+    "jade": "~1.11.0"
+  }
+}
