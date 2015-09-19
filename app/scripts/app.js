@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('audiohackathonteam1App', [
+  .module('queueCastApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -19,17 +19,22 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.tpl.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+      .when('/categories', {
+        templateUrl: 'views/categories.tpl.html',
+        controller: 'CategoryCtrl',
+        controllerAs: 'catCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.tpl.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/trailers', {
+        templateUrl: 'views/trailers.tpl.html',
+        controller: 'TrailerSwipeCtrl',
+        controllerAs: 'tsCtrl'
+      })
+      .when('/queue',{
+        templateUrl: 'views/queue.tpl.html',
+        controller: 'QueueCtrl',
+        controllerAs: 'queueCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/categories'
       });
   });
