@@ -3,6 +3,22 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+BODY {
+	background-color: #f6f6f6;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+#navBar {
+  width: 100%;
+  margin: auto;
+  display: block;
+  height: 100px; 
+  background-color: #ff2211;
+}
+
+.container {padding: 0px;}
 
 #container {
   width: 100%;
@@ -28,8 +44,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 20px;
   width: 360px;
   height: 360px;
-  top: 50px;
-  left: 50px;
+  top: 0px;
+  left: 0px;
   position: absolute;
   cursor: hand;
 }

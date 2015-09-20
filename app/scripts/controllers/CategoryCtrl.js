@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('queueCastApp')
-  .controller('CategoryCtrl', function () {
-  	this.hi = "hi! Categories!";
-  });
+  .controller('CategoryCtrl', ['$scope','CategoriesService', function ($scope, CategoriesService) {
+  	this.categories= CategoriesService.getCategories()
+  	
+  }]);
