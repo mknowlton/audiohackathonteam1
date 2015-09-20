@@ -18,12 +18,20 @@ function EpisodesService() {
 
 
 	//TODO: add lodash for this
-	this.likeEpisode = function (id) {
-		//remove from toView list
-		//send to API as liked
-		//deal with API response (maybe)
-		//add to episodeQueue maybe
-	};
+	// this.likeEpisode = function (id) {
+	// 	//remove from toView list
+	// 	//send to API as liked
+	// 	//deal with API response (maybe)
+	// 	//add to episodeQueue maybe
+	// };
+
+  this.uiTriggerNext = function(like) {
+    // if it was liked, add to the likedEpisodes
+    if (like) {
+      this.likedEpisodes.push(this.episodeQueue[this.epIndex]);
+    }
+    this.playNext();
+  }
 
 	this.getNextEpisodes = function () {
 		return getFakeEpisodes();
