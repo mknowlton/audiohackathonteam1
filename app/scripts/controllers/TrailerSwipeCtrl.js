@@ -1,23 +1,31 @@
 'use strict';
 
 angular.module('queueCastApp')
-  .controller('TrailerSwipeCtrl', function () {
-    this.hitrailers = [ "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)"];  
-  });
+  .controller('TrailerSwipeCtrl', function (EpisodesService) {
+    // this.hitrailers = [ "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)"];  
+  	
+  	this.episodes = EpisodesService.getEpisodeQueue();
 
-		var soundHandle = document.getElementById('soundHandle');
-		var segmentEnd;
 
-		if (soundHandle) {
-			soundHandle.addEventListener('timeupdate', function (){
-				if (segmentEnd && soundHandle.currentTime >= segmentEnd) {
-					soundHandle.pause();
-				}   
-				console.log(soundHandle.currentTime);
-			}, false);
-		}
-		
-		$(document).ready(function(){
+  	this.getImageUrl = function (episode) {
+  		console.log('url : ', episode.episode.image_urls.thumb);
+  		return episode.episode.image_urls.thumb;
+  		// return {'background-url' : 'url(' + episode.episode.image_urls.thumb + ')' };
+  	};
+
+  	this.getShowTitle = function (episode) {
+  		return episode.episode.show_title;
+  	};
+
+  	this.getEpisodeTitle = function (episode) {
+		return episode.episode.title;
+  	};
+
+  	this.getDuration = function (episode) {
+  		return episode.episode.audio_files[0].duration;
+  	};
+
+  	$(document).ready(function(){
 
 
 			$( "#yesClick" ).click(function() {
@@ -40,8 +48,8 @@ angular.module('queueCastApp')
 			});
 
 		});
-		
-		function swipeRightAnimation () {
+
+  	function swipeRightAnimation () {
 			//playAudio(30, 45);
 			$('.buddy:visible').addClass('rotate-left').delay(700).fadeOut(1);
 			$('.buddy:visible').find('.status').remove();
@@ -75,3 +83,8 @@ angular.module('queueCastApp')
 			soundHandle.currentTime = startTime;
 			soundHandle.play();
 		}
+		
+		
+  });
+
+		

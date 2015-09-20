@@ -7,12 +7,11 @@
 
 
 	<div id="container">
-		<div class="buddy cardBG1" style="display: block;">
-			<div class="avatar"  style="display: block; background-image: url(images/logo.png)"></div>
+		<div class="buddy cardBG1" style="display: block;" ng-repeat="episode in tsCtrl.episodes">
+			<div class="avatar"  style="display: block; background-image: url({{tsCtrl.getImageURL(episode)}})"></div>
 			<div class="showInfo">
-				<h1>Love + Radio</h1>
-				<h2>Greetings from Coney Island</h2>
-				<p>Rachel Price receives a mysterious letter from 1938.</p>
+				<h1>{{tsCtrl.getShowTitle(episode)}}</h1>
+				<h2>{{tsCtrl.getEpisodeTitle(episode)}}</h2>
 			</div>
 			<div class="showInfoFriends">
 				<p>Friends Who Have Like This</p>
@@ -24,9 +23,9 @@
 			</div>
 			
 		</div>
-		<div class="buddy cardBG1" ng-repeat="style in tsCtrl.hitrailers track by $index">
+<!-- 		<div class="buddy cardBG1" ng-repeat="style in tsCtrl.hitrailers track by $index">
 			<div class="avatar" style="display: block; background-image: {{ style }}"></div>
-		</div> 
+		</div>  -->
 	</div>
 
 
