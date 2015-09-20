@@ -3,6 +3,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+BODY {
+	background-color: #f6f6f6;
+	overflow: none;
+
+}
+
 
 #container {
   width: 100%;
