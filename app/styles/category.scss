@@ -1,19 +1,37 @@
-div.categoryBody
-	{
+
+div.categoryBody{
 		text-align: center;
-		font-famil: helvetica
-	}
+		font-family: helvetica;
 	> p{
-		font-size: 22px;
-	}
+			font-size: 22px;
+		}
 	img {
-		display: block;
-		margin: 5px auto;
-		padding: 20px;
-		border: 3px solid #9213FF;
-		border-radius: 50%;
-		width:95px;
-	}
+			display: block;
+			margin: 5px auto;
+			padding: 20px;
+			border: 3px solid #225590;
+			border-radius: 50%;
+			width:65px;
+		}
 }
 
+ div.categoryChoices{
+ 		width: 35%;
+ 		display: inline-block;
+ 
+	 > p{
+		color: #225590;
+		font-style: italic;
+	    }
+	:nth-child(4) {
+	    width: 100%;
+		}	
+}
 
+IMG#hamburger {
+	position: absolute;
+    width: 30px;
+    height: auto;
+    left: 20px;
+    top: 26px;
+}
