@@ -1,4 +1,7 @@
-<p>This will be the Category first view where I pick a category.
+<p>I want to ...</p>
 
-<div>{{catCtrl.hi}}</div>
-</p>
+<div ng-repeat="x in catCtrl.categories" class="col-md-6">
+<a href="/trailers/{{x.name}}"><img width=75 ng-src="{{x.image}}"  ng-click= "catCtrl.chooseCategory(x.name)"  ></a>
+<p>{{x.text}}</p>
+</div>
+ <p>{{catCtrl.pick}}</p>
