@@ -3,7 +3,7 @@
 angular.module('queueCastApp')
   .controller('QueueCtrl', function (EpisodesService) {
     
-  	this.episodes = EpisodesService.getEpisodeQueue();
+  	this.episodes = EpisodesService.likedEpisodes;
 
   	this.getImageUrl = function (episode) {
   		console.log('url : ', episode.episode.image_urls.thumb);
