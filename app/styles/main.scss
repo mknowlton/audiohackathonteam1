@@ -87,9 +87,20 @@ A#noClick {
   cursor: hand;
 }
 
+.showInfo H1 {font-size: 18px; text-align: center;}
+.showInfo H2 {font-size: 32px; line-height: 38px;  text-align: center;}
+.showInfo P {font-size: 14px; line-height: 17px;  text-align: center;}
+
+<<<<<<< HEAD
 .cardBG1 { background: url("../images/bg_card1.png"); background-size: 357px 447px; }
 .cardBG2 { background: url("../images/bg_card2.png"); background-size: 357px 447px; }
 .cardBG3 { background: url("../images/bg_card3.png"); background-size: 357px 447px; }
+=======
+.cardBG1 {background-image: url(../images/bg_card1.png);}
+.cardBG2 {background-image: url(../images/bg_card2.png);}
+.cardBG3 {background-image: url(../images/bg_card3.png);}
+
+>>>>>>> origin/staging
 
 .rotate-left {
   transform: rotate(30deg) scale(0.8);

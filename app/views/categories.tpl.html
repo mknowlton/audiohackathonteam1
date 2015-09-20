@@ -1,7 +1,40 @@
+<style>
+div.categoryBody > div:nth-child(4) {
+    width: 100%;
+}	
+
+div.categoryBody{
+	text-align: center;
+
+
+}
+div.categoryBody > p{
+	font-size: 22px;
+
+}
+
+div.categoryBody img {
+	display: block;
+	margin: 5px auto;
+	padding: 20px;
+	border: 3px solid #9213FF;
+	border-radius: 50%;
+	width:95px;
+}
+
+ div.categoryChoices > p{
+	color: #9213FF;
+	font-style: italic;
+}
+
+</style>
+<div class="header"><h1>Profile Builder</h1></div>
+<div class="categoryBody">
 <p>I want to ...</p>
 
-<div ng-repeat="x in catCtrl.categories" class="col-md-6">
+<div ng-repeat="x in catCtrl.categories" class="categoryChoices">
 <a href="/trailers/{{x.name}}"><img width=75 ng-src="{{x.image}}"  ng-click= "catCtrl.chooseCategory(x.name)"  ></a>
 <p>{{x.text}}</p>
 </div>
  <p>{{catCtrl.pick}}</p>
+</div>
