@@ -26,14 +26,21 @@
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/howler.min.js"></script>
     <script>
 	    $(document).foundation();
+	    
+	    	var sound = new Howl({
+			  urls: ['http://hackathon-audio.thisamericanlife.org/audio/566/566.mp3']
+			});
       
 		$(document).ready(function(){
 
 			$( "#yesCLick" ).bind( "tap", swipeRightAnimation );
 
 			$(".buddy").on("swiperight",function(){
+				playAudio ();
+			
 				$(this).addClass('rotate-left').delay(700).fadeOut(1);
 			  $('.buddy').find('.status').remove();
 
@@ -49,6 +56,8 @@
 			$( "#noCLick" ).bind( "tap", swipeLeftAnimation );
 
 		   $(".buddy").on("swipeleft",function(){
+		   	playAudio ();
+		   
 			$(this).addClass('rotate-right').delay(700).fadeOut(1);
 			$('.buddy').find('.status').remove();
 			$(this).append('<div class="status dislike">SKIP</div>');
@@ -86,6 +95,21 @@
 			 } else {
 				$('.buddy:visible').next().removeClass('rotate-left rotate-right').fadeIn(400);
 			} 				
+		}
+		
+		
+		function playAudio () {
+			sound.unload();
+			sound = new Howl({
+			  urls: ['http://hackathon-audio.thisamericanlife.org/audio/566/566.mp3'],
+			  sprite: {
+				demo1: [78000, 15000]
+			  }
+			});
+
+			// shoot the laser!
+			sound.play('demo1');
+		
 		}
 		
 

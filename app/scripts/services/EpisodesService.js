@@ -7,10 +7,15 @@ function EpisodesService() {
 	this.toView = [];
 
   // index of the currently playing episode
-  this.index = 0;
+  this.epIndex = 0;
 
 	// this.episodeQueue = [];
-  this.episodeQueue = getFakeEpisodes().results;
+  this.episodeQueue = getFakeEpisodes();
+
+  this.likedEpisodes = [];
+
+  this.audioDecks = [new p5AudioElt(), new p5AudioElt()];
+
 
 	//TODO: add lodash for this
 	this.likeEpisode = function (id) {
@@ -27,8 +32,96 @@ function EpisodesService() {
 	this.getEpisodeQueue = function () {
 		return getFakeEpisodes();
 	};
+
+  this.resetQueue = function() {
+    this.epIndex = 0;
+    this.cueIndex = 0;
+  };
+
+  this.clearAudioDecks = function() {
+    for (var i = 0; i < this.audioDecks.length; i++) {
+      this.audioDecks[i].stop();
+    }
+    this.loadDeck(this.epIndex);
+    this.loadDeck(this.epIndex + 1);
+  };
+
+  this.startPlaying = function() {
+    this.isPlaying = true;
+  };
+
+  this.stopPlaying = function() {
+    this.isPlaying = false;
+    this.clearAudioDecks();
+  };
+
+  this.loadDeck = function(_index) {
+    var q = this.episodeQueue;
+
+    if (_index >= q.length) {
+      console.log('no more to load');
+      return null;
+    } else {
+      // which deck to use
+      var i = _index % this.audioDecks.length;
+      var deck = this.audioDecks[i];
+
+      // which episode to load
+      var episode = q[_index];
+
+      // TO DO: how do we load mp3 and start/end time
+      var mp3URL = episode.episode.audio_files[0].url[0];
+      var startTime = episode.episode.audio_files[0].start_time || 200;
+      var endTime = startTime + 15;
+      deck.src(mp3URL);
+      deck.load();
+      deck.time(startTime);
+    }
+  },
+
+  this.playNext = function() {
+    var epQueue = this.episodeQueue;
+    var audioElt = this.audioDecks[this.epIndex % 2];
+
+    // just play the first cue (TO DO: remove this)
+    var cueIndex = 0;
+    clearAudioElementCues(this.audioDecks);
+
+    // if there is another episode to play... play it!
+    if (this.epIndex < epQueue.length - 1) {
+      audioElt.stop();
+      this.epIndex++;
+
+      // prepare the next deck...
+      this.loadDeck(this.epIndex + 1);
+
+      // reset the deck and play it
+      audioElt = this.audioDecks[this.epIndex % 2];
+      audioElt.play();
+      window.audioElt = audioElt;
+      var ep = this.episodeQueue[this.epIndex];
+      var startTime = ep.episode.audio_files[0].start_time || 200;
+      var endTime = startTime + 15;
+
+      audioElt.time(startTime);
+      audioElt.addCue(endTime, this.playNext.bind(this));
+    }
+    // otherwise, ...load more?
+    else {
+      audioElt.stop();
+      alert('there are no more episodes to play');
+      // TO DO: scope.epService.loadMore();
+    }
+  }
+
 }
 
+
+function clearAudioElementCues(decks) {
+  for (var i = 0; i < decks.length; i++) {
+    decks[i].clearCues();
+  }
+}
 
 function getFakeEpisodes() {
 	return [
