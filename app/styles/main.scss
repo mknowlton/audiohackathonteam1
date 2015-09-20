@@ -15,8 +15,47 @@ BODY {
   width: 100%;
   margin: auto;
   display: block;
-  height: 100px; 
-  background-color: #ff2211;
+  height: 74px; 
+  background-color: #225590;
+  position: relative;
+}
+
+IMG#backToProfile {
+	position: absolute;
+    width: 14px;
+    height: auto;
+    left: 20px;
+    top: 26px;
+}
+
+div.headerTitle {position: absolute; width: 100%; text-align: center; font-size: 24px; line-height: 24px; top: 26px; color: #fff; }
+
+IMG#headphone {
+    position: absolute;
+    width: 45px;
+    height: auto;
+    right: 20px;
+    top: 19px;
+}
+
+DIV#previewActions {
+	position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    bottom: 14px;
+}
+
+A#yesCLick {
+	position: absolute;
+    right: 80px;
+    bottom: 2px;
+}
+
+A#noCLick {
+	position: absolute;
+    left: 80px;
+    bottom: 2px;
 }
 
 .container {padding: 0px;}
