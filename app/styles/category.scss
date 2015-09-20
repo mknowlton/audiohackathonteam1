@@ -2,27 +2,27 @@ div.categoryBody{
 		text-align: center;
 		font-family: helvetica;
 	> p{
-		font-size: 22px;
-	}
+			font-size: 22px;
+		}
 	img {
-		display: block;
-		margin: 5px auto;
-		padding: 20px;
-		border: 3px solid #9213FF;
-		border-radius: 50%;
-		width:95px;
-	}
+			display: block;
+			margin: 5px auto;
+			padding: 20px;
+			border: 3px solid #9213FF;
+			border-radius: 50%;
+			width:95px;
+		}
 }
 
  div.categoryChoices{
- 	width: 35%;
- 	display: inline-block;
+ 		width: 35%;
+ 		display: inline-block;
  
- 	> p{
-	color: #9213FF;
-	font-style: italic;
-    }
+	 > p{
+		color: #9213FF;
+		font-style: italic;
+	    }
 	:nth-child(4) {
-    width: 100%;
-	}	
+	    width: 100%;
+		}	
 }
