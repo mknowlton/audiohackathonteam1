@@ -87,14 +87,20 @@ A#noClick {
   cursor: hand;
 }
 
-.showInfo H1 {font-size: 18px; text-align: center;}
-.showInfo H2 {font-size: 32px; line-height: 38px;  text-align: center;}
-.showInfo P {font-size: 14px; line-height: 17px;  text-align: center;}
+.showInfo { padding: 10px 55px; }
+
+.showInfo H1 {font-size: 18px; text-align: center; font-weight: normal; font-style: italic; margin: 10px 0px 0px 0px; }
+.showInfo H2 {font-size: 32px; line-height: 38px;  font-weight: normal; text-align: center; margin: 10px 0px 15px 0px; }
+.showInfo P {font-size: 14px; line-height: 17px;  text-align: center; font-weight: normal; margin: 0px; }
 
 .cardBG1 { background: url("../images/bg_card1.png"); background-size: 357px 447px; }
 .cardBG2 { background: url("../images/bg_card2.png"); background-size: 357px 447px; }
 .cardBG3 { background: url("../images/bg_card3.png"); background-size: 357px 447px; }
 
+.showInfoFriends IMG {margin: auto; display: block;}
+.showInfoTags IMG {margin: auto; display: block;}
+
+.showInfoFriends, .showInfoTags {text-align: center; padding-top: 10px; display: none;}
 
 .rotate-left {
   transform: rotate(30deg) scale(0.8);
@@ -113,11 +119,11 @@ A#noClick {
 .avatar {
     background: center no-repeat #4A4A4A;
     width: calc(100% - 19px);
-    height: 60%;
+    height: 50%;
     margin-top: 9px;
     margin-left: 9px;
   display: block;
-	background-size: 70%;
+	background-size: 60%;
 }
 .like {
   border-radius: 5px;
