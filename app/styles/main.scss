@@ -78,17 +78,20 @@ A#noCLick {
 .buddy {
   display: none;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  color: #fff;
-  padding: 20px;
-  width: 360px;
-  height: 360px;
+  color: #000;
+  width: 375px;
+  height: 470px;
   top: 0px;
   left: 0px;
   position: absolute;
   cursor: hand;
 }
+
+.cardBG1 (background-image: url(../images/bg_card1.png);)
+.cardBG2 (background-image: url(../images/bg_card2.png);)
+.cardBG3 (background-image: url(../images/bg_card3.png);)
+
+
 .rotate-left {
   transform: rotate(30deg) scale(0.8);
   transition: 1s;
