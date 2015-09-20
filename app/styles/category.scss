@@ -9,9 +9,9 @@ div.categoryBody{
 			display: block;
 			margin: 5px auto;
 			padding: 20px;
-			border: 3px solid #9213FF;
+			border: 3px solid #225590;
 			border-radius: 50%;
-			width:95px;
+			width:65px;
 		}
 }
 
@@ -20,10 +20,18 @@ div.categoryBody{
  		display: inline-block;
  
 	 > p{
-		color: #9213FF;
+		color: #225590;
 		font-style: italic;
 	    }
 	:nth-child(4) {
 	    width: 100%;
 		}	
+}
+
+IMG#hamburger {
+	position: absolute;
+    width: 30px;
+    height: auto;
+    left: 20px;
+    top: 26px;
 }

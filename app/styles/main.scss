@@ -1,8 +1,11 @@
 @import 'queues.scss';
+@import 'category.scss';
 
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 // endbower
+
+.footer {display: none;}
 
 BODY {
 	background-color: #f6f6f6;
