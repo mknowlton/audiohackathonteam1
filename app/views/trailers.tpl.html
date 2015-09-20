@@ -8,7 +8,8 @@
 
 	<div id="container">
 		<div class="buddy cardBG1" style="display: block;" ng-repeat="episode in tsCtrl.episodes">
-			<div class="avatar"  style="display: block; background-image: url({{tsCtrl.getImageURL(episode)}})"></div>
+			<div class="avatar"  
+			style="display: block; background-image: url( {{ tsCtrl.getImageUrl(episode) }} )"></div>
 			<div class="showInfo">
 				<h1>{{tsCtrl.getShowTitle(episode)}}</h1>
 				<h2>{{tsCtrl.getEpisodeTitle(episode)}}</h2>

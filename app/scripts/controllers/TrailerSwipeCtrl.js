@@ -76,7 +76,6 @@ function swipeLeftAnimation (triggerNextAudioFN) {
 
 	if ( $('.buddy:visible').is(':last-child') ) {
 	 $('.buddy:visible:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-	  alert('Na-na!');
 	 } else {
 		$('.buddy:visible').next().removeClass('rotate-left rotate-right').fadeIn(400);
 	} 				
