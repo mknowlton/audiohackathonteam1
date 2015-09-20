@@ -25,13 +25,14 @@ function EpisodesService() {
 	// 	//add to episodeQueue maybe
 	// };
 
+  var _this = this;
   this.uiTriggerNext = function(like) {
     // if it was liked, add to the likedEpisodes
     if (like) {
-      this.likedEpisodes.push(this.episodeQueue[this.epIndex]);
+      _this.likedEpisodes.push(_this.episodeQueue[_this.epIndex]);
     }
-    this.playNext();
-  }
+    _this.playNext();
+  };
 
 	this.getNextEpisodes = function () {
 		return getFakeEpisodes();
