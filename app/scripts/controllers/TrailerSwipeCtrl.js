@@ -55,7 +55,7 @@ angular.module('queueCastApp')
 
 function swipeRightAnimation (triggerNextAudioFN) {
 			//playAudio(30, 45);
-			triggerNextAudioFN(true);
+			if (triggerNextAudioFN) {triggerNextAudioFN(true);}
 			$('.buddy:visible').addClass('rotate-left').delay(700).fadeOut(1);
 			$('.buddy:visible').find('.status').remove();
 
@@ -69,7 +69,7 @@ function swipeRightAnimation (triggerNextAudioFN) {
 		
 function swipeLeftAnimation (triggerNextAudioFN) {
 	//playAudio(30, 45);
-	triggerNextAudioFN(false);
+	if (triggerNextAudioFN) {triggerNextAudioFN(false);}
 	$('.buddy:visible').addClass('rotate-right').delay(700).fadeOut(1);
 	$('.buddy:visible').find('.status').remove();
 	$('.buddy:visible').append('<div class="status dislike">SKIP</div>');
