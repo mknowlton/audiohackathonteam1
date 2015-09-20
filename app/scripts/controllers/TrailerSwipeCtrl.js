@@ -69,7 +69,12 @@ function swipeRightAnimation (triggerNextAudioFN) {
 				$('.buddy:visible:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
 			} else {
 				$('.buddy:visible').next().removeClass('rotate-left rotate-right').fadeIn(400);
-			}
+			}			
+			
+			$('.buddy:visible').find('.status').fadeOut(600, function () {
+				$('.buddy:visible').find('.status').remove();
+			});
+			
 		}
 		
 function swipeLeftAnimation (triggerNextAudioFN) {
@@ -83,7 +88,11 @@ function swipeLeftAnimation (triggerNextAudioFN) {
 	 $('.buddy:visible:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
 	 } else {
 		$('.buddy:visible').next().removeClass('rotate-left rotate-right').fadeIn(400);
-	} 				
+	} 	
+	
+		$('.buddy:visible').find('.status').fadeOut(600, function () {
+			$('.buddy:visible').find('.status').remove();
+		});					
 
 }
 		
