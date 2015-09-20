@@ -87,9 +87,9 @@ A#noCLick {
   cursor: hand;
 }
 
-.cardBG1 (background-image: url(../images/bg_card1.png);)
-.cardBG2 (background-image: url(../images/bg_card2.png);)
-.cardBG3 (background-image: url(../images/bg_card3.png);)
+.cardBG1 {background-image: url(../images/bg_card1.png);}
+.cardBG2 {background-image: url(../images/bg_card2.png);}
+.cardBG3 {background-image: url(../images/bg_card3.png);}
 
 
 .rotate-left {
