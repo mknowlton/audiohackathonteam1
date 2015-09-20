@@ -1,0 +1,49 @@
+.queues-view {
+	.header {
+		background: blue;
+		height: 40px;
+	}
+
+	.queue {
+		.row {
+			border-bottom: solid rgba(0, 0, 0, .1) 1px;
+			padding: 20px;
+			position: relative;
+
+			height: 100px;
+
+			.left {
+				display: inline-block;
+				height: 100px;
+				width: 100px;
+				position: absolute;
+    			top: 20px;
+			}
+
+			.right {
+				display: block;
+
+				margin-left: 120px;
+
+				text-align: left;
+				.show-title, .episode-duration {
+					font-style: italic;
+					font-size: 16px;
+				}
+
+				.episode-title {
+					font-size: 24px;
+				}
+			}
+
+			.right-carot {
+				background-image: url('../images/right_carot.png');
+				height: 19px;
+    			width: 10px;
+    			position: absolute;
+    			top: 63px;
+    			right: 20px;
+			}
+		}
+	}
+}

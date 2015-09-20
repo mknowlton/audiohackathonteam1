@@ -21,11 +21,11 @@ function EpisodesService() {
 	};
 
 	this.getNextEpisodes = function () {
-		return getFakeEpisodes().results;
+		return getFakeEpisodes();
 	};
 
 	this.getEpisodeQueue = function () {
-		return getFakeEpisodes().results;
+		return getFakeEpisodes();
 	};
 }
 

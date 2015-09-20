@@ -1,3 +1,27 @@
-<div>
- THis will be the Queue (your listen queue)
+<div class="queues-view">
+
+	<div class="header">
+		
+		<span>My Queue</span>
+		<span class="hamburger-menu">=</span>
+
+		<div class="button">Listen to all in iTunes</div>
+	</div>
+
+	<div class="queue">
+
+		<div class="row" ng-repeat="episode in queueCtrl.episodes"> 
+			<div class="left" style="background-image : url({{queueCtrl.getImageUrl(episode)}})"></div>
+
+			<div class="right"> 
+				<div class="show-title"> {{ queueCtrl.getShowTitle(episode) }} </div>
+				<div class="episode-title"> {{ queueCtrl.getEpisodeTitle(episode) }} </div>
+				<div class="episode-duration"> {{ queueCtrl.getDuration(episode) | secondsToDateTime | date:'HH:mm:ss' }} </div>
+			</div>
+
+			<div class="right-carot"></div>
+		</div>
+
+	</div>
+
 </div>
