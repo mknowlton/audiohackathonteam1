@@ -10,7 +10,7 @@ function EpisodesService() {
   this.epIndex = 0;
 
 	// this.episodeQueue = [];
-  this.episodeQueue = getFakeEpisodes().results;
+  this.episodeQueue = getFakeEpisodes();
 
   this.likedEpisodes = [];
 
@@ -70,15 +70,18 @@ function EpisodesService() {
       var episode = q[_index];
 
       // TO DO: how do we load mp3 and start/end time
-      deck.src(episode.mp3src);
+      var mp3URL = episode.episode.audio_files[0].url[0];
+      var startTime = episode.episode.audio_files[0].start_time || 200;
+      var endTime = startTime + 15;
+      deck.src(mp3URL);
       deck.load();
-      deck.time(episode.cues[0].start_time);
+      deck.time(startTime);
     }
   },
 
   this.playNext = function() {
     var epQueue = this.episodeQueue;
-    var audioElt = this.audioDecks[epIndex % 2];
+    var audioElt = this.audioDecks[this.epIndex % 2];
 
     // just play the first cue (TO DO: remove this)
     var cueIndex = 0;
@@ -96,9 +99,10 @@ function EpisodesService() {
       audioElt = this.audioDecks[this.epIndex % 2];
       audioElt.play();
       window.audioElt = audioElt;
-      var ep = this.epService.episodeQueue[this.epIndex];
-      var startTime = ep.cues[cueIndex].start_time;
-      var endTime = ep.cues[cueIndex].end_time;
+      var ep = this.episodeQueue[this.epIndex];
+      var startTime = ep.episode.audio_files[0].start_time || 200;
+      var endTime = startTime + 15;
+
       audioElt.time(startTime);
       audioElt.addCue(endTime, this.playNext.bind(this));
     }
