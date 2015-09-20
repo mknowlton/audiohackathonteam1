@@ -12,7 +12,7 @@ angular.module('queueCastApp')
   	};
 
   	this.getShowTitle = function (episode) {
-  		return episode.episode.showTitle;
+  		return episode.episode.show_title;
   	};
 
   	this.getEpisodeTitle = function (episode) {
