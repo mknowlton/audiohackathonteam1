@@ -1,1 +1,16 @@
+div.categoryBody{
+		text-align: center;
+		font-family: helvetica;
+	> p{
+		font-size: 22px;
+	}
+	img {
+		display: block;
+		margin: 5px auto;
+		padding: 20px;
+		border: 3px solid #9213FF;
+		border-radius: 50%;
+		width:95px;
+	}
+}
 
