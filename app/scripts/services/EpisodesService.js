@@ -18,12 +18,20 @@ function EpisodesService() {
 
 
 	//TODO: add lodash for this
-	this.likeEpisode = function (id) {
-		//remove from toView list
-		//send to API as liked
-		//deal with API response (maybe)
-		//add to episodeQueue maybe
-	};
+	// this.likeEpisode = function (id) {
+	// 	//remove from toView list
+	// 	//send to API as liked
+	// 	//deal with API response (maybe)
+	// 	//add to episodeQueue maybe
+	// };
+
+  this.uiTriggerNext = function(like) {
+    // if it was liked, add to the likedEpisodes
+    if (like) {
+      this.likedEpisodes.push(this.episodeQueue[this.epIndex]);
+    }
+    this.playNext();
+  }
 
 	this.getNextEpisodes = function () {
 		return getFakeEpisodes();
@@ -79,6 +87,11 @@ function EpisodesService() {
     }
   },
 
+  this.timeIsUp = function() {
+    swipeLeftAnimation();
+    this.playNext().bind(this);
+  };
+
   this.playNext = function() {
     var epQueue = this.episodeQueue;
     var audioElt = this.audioDecks[this.epIndex % 2];
@@ -104,12 +117,11 @@ function EpisodesService() {
       var endTime = startTime + 15;
 
       audioElt.time(startTime);
-      audioElt.addCue(endTime, this.playNext.bind(this));
+      audioElt.addCue(endTime, this.timeIsUp.bind(this));
     }
     // otherwise, ...load more?
     else {
       audioElt.stop();
-      alert('there are no more episodes to play');
       // TO DO: scope.epService.loadMore();
     }
   }
