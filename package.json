@@ -53,6 +53,7 @@
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
+    "lodash": "*",
     "time-grunt": "^1.0.0"
   },
   "engines": {

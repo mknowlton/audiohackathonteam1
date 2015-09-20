@@ -33,40 +33,30 @@ app.get('/categories', function(req, res) {
 	var params = req.query;
 
 	for (var i in params) {
+
 		// check if it is a category
 		if (i.indexOf('cat') > -1) {
-
-			// var options = {
-			// 	url: 'https://www.audiosear.ch/api/search/shows/' + params[i],
-			// 	headers: {
-			// 		'User-Agent': 'request',
-			// 		'Authorization': 'ffe60349cd22ef3b58af6701dd118a310d8da9608828d9174051edb670854ead'
-			// 	}
-
-			// }
-
-			// request(options, function(error, response, body) {
-			// 	console.log(error);
 			audiosearch.searchEpisodes(params[i]).then(function (results) {
-			  // do stuff here.
-			  res.send(results);
+				res.send(results);
 			});
-
-
-			// 	if (!error && response.statusCode == 200) {
-			// 		res.send(body);
-			// 	} else if(error || response.statusCode > 400) {
-			// 		res.send({'error: ': body});
-			// 	}
-			// });
 		}
 	}
-	// https://www.audiosear.ch/api/search/shows/comedy
+});
 
-	// var showIDs = {
-	// 	'cool show': 0,
-	// 	'another show': 1
-	// }
+// Audiosearch.prototype.searchShows = function (queryString, params) {
+//   return this.get('/search/shows/'+encodeURI(queryString), params);
+// };
 
-	// res.send(showIDs);
+app.get('/similarshowsbyname', function(req, res) {
+	var params = req.query;
+	console.log(params);
+	for (var i in params) {
+		// check if it is a category
+		if (i.indexOf('show') > -1) {
+			var show = params[i];
+			audiosearch.get('/search/shows/' + encodeURI(params[i]) ).then(function (results) {
+				res.send(results);
+			});
+		}
+	}
 });
