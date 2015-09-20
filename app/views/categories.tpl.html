@@ -9,7 +9,7 @@
 <p>I want to ...</p>
 
 <div ng-repeat="x in catCtrl.categories" class="categoryChoices">
-<a href="/#/trailers/"><img width=75 ng-src="{{x.image}}"  ng-click= "catCtrl.chooseCategory(x.name)"  ></a>
+<a href="/#/trailers/"><img width=75 src="{{x.image}}" /></a>
 <p>{{x.text}}</p>
 </div>
  <p>{{catCtrl.pick}}</p>
