@@ -42,6 +42,15 @@ IMG#headphone {
     top: 19px;
 }
 
+IMG#headphoneSelected {
+    position: absolute;
+    height: auto;
+    width: 57px;
+    top: 7px;
+    right: 9px;    
+    
+}
+
 DIV#previewActions {
 	position: absolute;
     width: 100%;
