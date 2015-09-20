@@ -21,11 +21,11 @@ angular.module('queueCastApp')
 		$(document).ready(function(){
 
 
-			$( "#yesCLick" ).click(function() {
+			$( "#yesClick" ).click(function() {
 				swipeRightAnimation();
 			});
 
-			$( "#noCLick" ).click(function() {
+			$( "#noClick" ).click(function() {
 				swipeLeftAnimation();
 			});
 
