@@ -5,8 +5,7 @@ angular.module('queueCastApp')
     this.hitrailers = [ "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)", "url(http://files.thisamericanlife.org//sites//default//files//episodes//565_0.jpg)"];  
   });
 
-
-      	var soundHandle = document.getElementById('soundHandle');
+		var soundHandle = document.getElementById('soundHandle');
 		var segmentEnd;
 
 		if (soundHandle) {
@@ -75,4 +74,4 @@ angular.module('queueCastApp')
 			segmentEnd = endTime;
 			soundHandle.currentTime = startTime;
 			soundHandle.play();
-		}		
+		}
