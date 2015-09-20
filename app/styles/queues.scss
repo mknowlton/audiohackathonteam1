@@ -1,16 +1,22 @@
 .queues-view {
-	.header {
-		background: blue;
-		height: 40px;
+
+	#queueBG {
+	  width: 100%;
+	  margin: auto;
+	  display: block;
+	  height: 74px; 
+	  background-color: #50B685;
+	  position: relative;
 	}
+
+	IMG#playAll {display: block; margin: 30px auto 10px auto;}
 
 	.queue {
 		.row {
 			border-bottom: solid rgba(0, 0, 0, .1) 1px;
 			padding: 20px;
 			position: relative;
-
-			height: 100px;
+			height: auto;
 
 			.left {
 				display: inline-block;
@@ -22,17 +28,22 @@
 
 			.right {
 				display: block;
-
+				width: calc(100% - 140px);
 				margin-left: 120px;
+				min-height: 100px;
 
 				text-align: left;
 				.show-title, .episode-duration {
 					font-style: italic;
-					font-size: 16px;
+					font-size: 12px;
+					line-height: 14px;
+					margin-bottom: 8px; 
 				}
 
 				.episode-title {
-					font-size: 24px;
+					font-size: 18px;
+					line-height: 22px; 
+					margin-bottom: 16px; 
 				}
 			}
 
