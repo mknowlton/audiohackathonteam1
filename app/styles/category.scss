@@ -14,3 +14,15 @@ div.categoryBody{
 	}
 }
 
+ div.categoryChoices{
+ 	width: 35%;
+ 	display: inline-block;
+ 
+ 	> p{
+	color: #9213FF;
+	font-style: italic;
+    }
+	:nth-child(4) {
+    width: 100%;
+	}	
+}
