@@ -14,7 +14,7 @@ function EpisodesService() {
 	};
 
 	this.getNextEpisodes = function () {
-		return getFakeEpisodes();
+		return getFakeEpisodes().results;
 	};
  }
 
