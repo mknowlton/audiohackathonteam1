@@ -13,6 +13,11 @@ angular.module('queueCastApp')
   		// return {'background-url' : 'url(' + episode.episode.image_urls.thumb + ')' };
   	};
 
+  	this.getLikedEpAmt = function () {
+  		console.log("ep service", EpisodesService.likedEpisodes.length);
+  		return EpisodesService.likedEpisodes.length;
+  	};
+
   	this.getShowTitle = function (episode) {
   		return episode.episode.show_title;
   	};

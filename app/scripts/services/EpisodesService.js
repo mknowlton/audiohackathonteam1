@@ -3,7 +3,7 @@
 angular.module('queueCastApp')
   .service('EpisodesService', EpisodesService);
 
-function EpisodesService() {
+function EpisodesService($timeout) {
 	this.toView = [];
 
   // index of the currently playing episode
@@ -29,7 +29,7 @@ function EpisodesService() {
   this.uiTriggerNext = function(like) {
     // if it was liked, add to the likedEpisodes
     if (like) {
-      _this.likedEpisodes.push(_this.episodeQueue[_this.epIndex]);
+      $timeout(function () {_this.likedEpisodes.push(_this.episodeQueue[_this.epIndex]);});
     }
     _this.playNext();
   };
