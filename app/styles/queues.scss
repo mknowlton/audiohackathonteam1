@@ -1,0 +1,32 @@
+.queues-view {
+	.header {
+		background: blue;
+		height: 40px;
+	}
+
+	.queue {
+		.row {
+			border-bottom: solid rgba(0, 0, 0, .1) 1px;
+			padding: 20px;
+			.left {
+				display: inline-block;
+				height: 100px;
+				width: 100px;
+			}
+
+			.right {
+				display: inline-block;
+
+				text-align: left;
+				.show-title, .episode-duration {
+					font-style: italic;
+					font-size: 12px;
+				}
+
+				.episode-title {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

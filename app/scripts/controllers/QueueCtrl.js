@@ -5,8 +5,10 @@ angular.module('queueCastApp')
     
   	this.episodes = EpisodesService.getEpisodeQueue();
 
-  	this.getImageStyle = function (episode) {
-  		return {'background-url' : 'url(' + episode.episode.image_urls.thumb + ')' };
+  	this.getImageUrl = function (episode) {
+  		console.log('url : ', episode.episode.image_urls.thumb);
+  		return episode.episode.image_urls.thumb;
+  		// return {'background-url' : 'url(' + episode.episode.image_urls.thumb + ')' };
   	};
 
   	this.getShowTitle = function (episode) {
@@ -15,10 +17,6 @@ angular.module('queueCastApp')
 
   	this.getEpisodeTitle = function (episode) {
 		return episode.episode.title;
-  	};
-
-  	this.getEpisodeDescription = function (episode) {
-  		return episode.text; //no idea if this is right!
   	};
 
   	this.getDuration = function (episode) {
