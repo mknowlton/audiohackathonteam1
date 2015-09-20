@@ -4,16 +4,23 @@ angular.module('queueCastApp')
   .service('EpisodesService', EpisodesService);
 
 function EpisodesService() {
-	this.liked = [];
-	this.disliked = [];
 	this.toView = [];
+
+	this.episodeQueue = [];
 
 	//TODO: add lodash for this
 	this.likeEpisode = function (id) {
-
+		//remove from toView list
+		//send to API as liked
+		//deal with API response (maybe)
+		//add to episodeQueue maybe
 	};
 
 	this.getNextEpisodes = function () {
+		return getFakeEpisodes().results;
+	};
+
+	this.getEpisodeQueue = function () {
 		return getFakeEpisodes().results;
 	};
  }
